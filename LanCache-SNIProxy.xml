@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>steamcache-sniproxy</Name>
-  <Repository>steamcache/sniproxy:latest</Repository>
-  <Registry>https://github.com/steamcache/sniproxy</Registry>
+  <Name>lancache-sniproxy</Name>
+  <Repository>lancachenet/sniproxy:latest</Repository>
+  <Registry>https://github.com/lancachenet/sniproxy</Registry>
   <Network>host</Network>
   <MyIP/>
   <Shell>sh</Shell>
@@ -13,11 +13,11 @@
   <Category/>
   <WebUI/>
   <TemplateURL/>
-  <Icon>https://avatars1.githubusercontent.com/u/16938914?s=200&amp;amp;v=4</Icon>
+  <Icon>https://secure.gravatar.com/avatar/0aad6676f3d1456ed109787f3b51db07.jpg?s=80&amp;amp;amp;amp;amp;amp;r=g&amp;amp;amp;amp;amp;amp;d=mm</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1554746909</DateInstalled>
+  <DateInstalled>1568380441</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description/>

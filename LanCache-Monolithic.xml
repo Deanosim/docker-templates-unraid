@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>steamcache-monolithic</Name>
-  <Repository>steamcache/monolithic</Repository>
-  <Registry>https://github.com/steamcache/monolithic</Registry>
+  <Name>lancache-monolithic</Name>
+  <Repository>lancachenet/monolithic</Repository>
+  <Registry>https://github.com/lancachenet/monolithic</Registry>
   <Network>host</Network>
   <MyIP/>
   <Shell>sh</Shell>
@@ -13,11 +13,11 @@
   <Category/>
   <WebUI/>
   <TemplateURL/>
-  <Icon>https://avatars1.githubusercontent.com/u/16938914?s=200&amp;amp;v=4</Icon>
+  <Icon>https://secure.gravatar.com/avatar/0aad6676f3d1456ed109787f3b51db07.jpg?s=80&amp;amp;amp;amp;r=g&amp;amp;amp;amp;d=mm</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1554746808</DateInstalled>
+  <DateInstalled>1568380302</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description/>
@@ -38,24 +38,24 @@
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/steamcache/logs/</HostDir>
+      <HostDir>/mnt/user/appdata/steamcache/logs/</HostDir>
       <ContainerDir>/data/logs</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
   <Environment>
     <Variable>
-      <Value>1.1.1.1 1.0.0.1</Value>
+      <Value>1.1.1.1</Value>
       <Name>UPSTREAM_DNS</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>500m</Value>
+      <Value>512m</Value>
       <Name>CACHE_MEM_SIZE</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>2000g</Value>
+      <Value>4096g</Value>
       <Name>CACHE_DISK_SIZE</Name>
       <Mode/>
     </Variable>
@@ -66,11 +66,11 @@
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Host Path 1" Target="/data/cache" Default="" Mode="rw" Description="Container Path: /cache/data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/steamcache/cache/</Config>
-  <Config Name="Host Path 2" Target="/data/logs" Default="" Mode="rw" Description="Container Path: /data/logs" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/steamcache/logs/</Config>
-  <Config Name="Host Key 1" Target="UPSTREAM_DNS" Default="" Mode="" Description="Container Variable: UPSTREAM_DNS" Type="Variable" Display="always" Required="false" Mask="false">1.1.1.1 1.0.0.1</Config>
-  <Config Name="Host Key 2" Target="CACHE_MEM_SIZE" Default="" Mode="" Description="Container Variable: CACHE_MEM_SIZE" Type="Variable" Display="always" Required="false" Mask="false">500m</Config>
-  <Config Name="Host Key 3" Target="CACHE_DISK_SIZE" Default="" Mode="" Description="Container Variable: CACHE_DISK_SIZE" Type="Variable" Display="always" Required="false" Mask="false">2000g</Config>
+  <Config Name="Host Path 1" Target="/data/cache" Default="" Mode="rw" Description="Container Path: /cache/data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/steamcache/cache/</Config>
+  <Config Name="Host Path 2" Target="/data/logs" Default="" Mode="rw" Description="Container Path: /data/logs" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/steamcache/logs/</Config>
+  <Config Name="Host Key 1" Target="UPSTREAM_DNS" Default="" Mode="" Description="Container Variable: UPSTREAM_DNS" Type="Variable" Display="always" Required="true" Mask="false">1.1.1.1</Config>
+  <Config Name="Host Key 2" Target="CACHE_MEM_SIZE" Default="" Mode="" Description="Container Variable: CACHE_MEM_SIZE" Type="Variable" Display="always" Required="false" Mask="false">512m</Config>
+  <Config Name="Host Key 3" Target="CACHE_DISK_SIZE" Default="" Mode="" Description="Container Variable: CACHE_DISK_SIZE" Type="Variable" Display="always" Required="false" Mask="false">4096g</Config>
   <Config Name="LOGFILE_RETENTION" Target="LOGFILE_RETENTION" Default="" Mode="" Description="Container Variable: LOGFILE_RETENTION" Type="Variable" Display="always" Required="false" Mask="false">90</Config>
   <Config Name="80" Target="80" Default="" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">80</Config>
 </Container>

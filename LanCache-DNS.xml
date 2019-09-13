@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>steamcache-dns</Name>
-  <Repository>steamcache/steamcache-dns:latest</Repository>
-  <Registry>https://hub.docker.com/r/steamcache/steamcache-dns/</Registry>
+  <Name>lancache-dns</Name>
+  <Repository>lancachenet/lancache-dns:latest</Repository>
+  <Registry>https://hub.docker.com/r/lancachenet/lancache-dns</Registry>
   <Network>host</Network>
   <MyIP/>
   <Shell>sh</Shell>
-  <Privileged>false</Privileged>
+  <Privileged>true</Privileged>
   <Support/>
   <Project/>
   <Overview>This docker container provides DNS entries for caching services to be used in conjunction with a steamcache/steamcache &amp;amp; steamcache/generic server.&#xD;
@@ -15,11 +15,11 @@ The DNS is generated automatically at startup of the container, the list of supp
   <Category/>
   <WebUI/>
   <TemplateURL/>
-  <Icon>https://avatars1.githubusercontent.com/u/16938914?s=200&amp;amp;v=4</Icon>
-  <ExtraParams/>
+  <Icon>https://secure.gravatar.com/avatar/0aad6676f3d1456ed109787f3b51db07.jpg?s=80&amp;amp;r=g&amp;amp;d=mm</Icon>
+  <ExtraParams>-h lancache-dns</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1554746689</DateInstalled>
+  <DateInstalled>1568380073</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>This docker container provides DNS entries for caching services to be used in conjunction with a steamcache/steamcache &amp;amp; steamcache/generic server.&#xD;
@@ -42,19 +42,13 @@ The DNS is generated automatically at startup of the container, the list of supp
       <Mode/>
     </Variable>
     <Variable>
-      <Value>1.1.1.1</Value>
+      <Value>192.168.1.202</Value>
       <Name>UPSTREAM_DNS</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>true</Value>
-      <Name>DISABLE_WSUS</Name>
       <Mode/>
     </Variable>
   </Environment>
   <Labels/>
   <Config Name="USE_GENERIC_CACHE" Target="USE_GENERIC_CACHE" Default="true" Mode="" Description="Container Variable: USE_GENERIC_CACHE" Type="Variable" Display="always" Required="true" Mask="false">true</Config>
   <Config Name="LANCACHE_IP" Target="LANCACHE_IP" Default="" Mode="" Description="Container Variable: LANCACHE_IP" Type="Variable" Display="always" Required="true" Mask="false">192.168.1.200</Config>
-  <Config Name="UPSTREAM_DNS" Target="UPSTREAM_DNS" Default="" Mode="" Description="Container Variable: UPSTREAM_DNS" Type="Variable" Display="always" Required="true" Mask="false">1.1.1.1</Config>
-  <Config Name="Host Key 4" Target="DISABLE_WSUS" Default="true" Mode="" Description="Container Variable: DISABLE_WSUS" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="UPSTREAM_DNS" Target="UPSTREAM_DNS" Default="" Mode="" Description="Container Variable: UPSTREAM_DNS" Type="Variable" Display="always" Required="true" Mask="false">192.168.1.202</Config>
 </Container>

@@ -11,9 +11,9 @@
 - Nextcloud.xml
 - organizr-v2.xml
 - Gotify.xml
-- SteamCache-DNS.xml
-- SteamCache-Monolithic.xml
-- SteamCache-SNIProxy.xml
+- LanCache-DNS.xml
+- LanCache-Monolithic.xml
+- LanCache-SNIProxy.xml
 - zntcui.xml
 - Phantombot.xml
 

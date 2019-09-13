@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>tautulli</Name>
+  <Repository>linuxserver/tautulli</Repository>
+  <Registry>https://hub.docker.com/r/linuxserver/tautulli/</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.228</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/40750-support-linuxserverio-tautulli/</Support>
+  <Project>http://tautulli.com/</Project>
+  <Overview>Tautulli is a 3rd party application that you can run along side your Plex Media Server to monitor activity and track various statistics. Most importantly, these statistics include what has been watched, who watched it, when and where they watched it, and how it was watched. All statistics are presented in a nice and clean interface with many tables and graphs, which makes it easy to brag about your server to everyone else.[br][br]&#xD;
+  [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]&#xD;
+  [b]8181[/b] The webui for Tautulli's webui [br]&#xD;
+  [b]/config[/b] Storing Configuration and the Tautulli database[br]&#xD;
+[b]/logs[/b] Map to you plex logs (required for IP logging)[br]&#xD;
+&#xD;
+</Overview>
+  <Category>MediaServer:Other Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8181]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/tautulli.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/tautulli-icon.png</Icon>
+  <ExtraParams>--memory=0.25G</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1554747017</DateInstalled>
+  <DonateText>Donations</DonateText>
+  <DonateLink>https://www.linuxserver.io/donate</DonateLink>
+  <Description>Tautulli is a 3rd party application that you can run along side your Plex Media Server to monitor activity and track various statistics. Most importantly, these statistics include what has been watched, who watched it, when and where they watched it, and how it was watched. All statistics are presented in a nice and clean interface with many tables and graphs, which makes it easy to brag about your server to everyone else.[br][br]&#xD;
+  [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]&#xD;
+  [b]8181[/b] The webui for Tautulli's webui [br]&#xD;
+  [b]/config[/b] Storing Configuration and the Tautulli database[br]&#xD;
+[b]/logs[/b] Map to you plex logs (required for IP logging)[br]&#xD;
+&#xD;
+</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8181</HostPort>
+        <ContainerPort>8181</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/tautulli/logs</HostDir>
+      <ContainerDir>/logs</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/tautulli</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Port 1" Target="8181" Default="8181" Mode="tcp" Description="Container Port: 8181" Type="Port" Display="always" Required="true" Mask="false">8181</Config>
+  <Config Name="Host Path 1" Target="/logs" Default="" Mode="ro" Description="Container Path: /logs" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/tautulli/logs</Config>
+  <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="Key 2" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/tautulli</Config>
+</Container>

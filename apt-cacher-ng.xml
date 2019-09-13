@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>apt-cacher-ng</Name>
+  <Repository>sameersbn/apt-cacher-ng</Repository>
+  <Registry>https://hub.docker.com/r/sameersbn/apt-cacher-ng/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://lime-technology.com/forum/index.php?topic=51498.0</Support>
+  <Project>https://www.unix-ag.uni-kl.de/~bloch/acng/</Project>
+  <Overview>&#xD;
+	  Apt-Cacher NG is a caching proxy, specialized for package files from Linux distributors, primarily for Debian (and Debian based) distributions but not limited to those.[br][br]&#xD;
+    [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]&#xD;
+    [b]/var/cache/apt-cacher-ng[/b] This is where apt-cacher-ng stores its cached.[br]&#xD;
+  </Overview>
+  <Category>Network:Proxy Network:Other Tools:</Category>
+  <WebUI>http://[IP]:[PORT:3142]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://github.com/atribe/unRAID-docker/raw/master/icons/apt-cacher.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1554744193</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#xD;
+	  Apt-Cacher NG is a caching proxy, specialized for package files from Linux distributors, primarily for Debian (and Debian based) distributions but not limited to those.[br][br]&#xD;
+    [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]&#xD;
+    [b]/var/cache/apt-cacher-ng[/b] This is where apt-cacher-ng stores its cached.[br]&#xD;
+  </Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort>3142</HostPort>
+        <ContainerPort>3142</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/apt-cacher-ng</HostDir>
+      <ContainerDir>/var/cache/apt-cacher-ng</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="Host Port 1" Target="3142" Default="3142" Mode="tcp" Description="Container Port: 3142" Type="Port" Display="always" Required="true" Mask="false">3142</Config>
+  <Config Name="Host Path 1" Target="/var/cache/apt-cacher-ng" Default="/mnt/user/appdata/apt-cacher-ng" Mode="rw" Description="Container Path: /var/cache/apt-cacher-ng" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/apt-cacher-ng</Config>
+</Container>

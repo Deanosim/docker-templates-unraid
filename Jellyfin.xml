@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Jellyfin</Name>
+  <Repository>jellyfin/jellyfin:latest</Repository>
+  <Registry>https://hub.docker.com/r/jellyfin/jellyfin/</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.221</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.jellyfin.org/</Support>
+  <Project>https://jellyfin.media/</Project>
+  <Overview>Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps. Jellyfin is descended from Emby's 3.5.2 release and ported to the .NET Core framework to enable full cross-platform support. There are no strings attached, no premium licenses or features, and no hidden agendas: just a team who want to build something better and work together to achieve it. We welcome anyone who is interested in joining us in our quest!</Overview>
+  <Category>MediaApp:Video MediaApp:Music MediaApp:Photos MediaApp:Other</Category>
+  <WebUI>http://[IP]:[PORT:8096]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://avatars3.githubusercontent.com/u/45698031?s=200&amp;amp;v=4</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1554743790</DateInstalled>
+  <DonateText>Donate to the awesome people who make Jellyfin!</DonateText>
+  <DonateLink>https://opencollective.com/jellyfin</DonateLink>
+  <Description>Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps. Jellyfin is descended from Emby's 3.5.2 release and ported to the .NET Core framework to enable full cross-platform support. There are no strings attached, no premium licenses or features, and no hidden agendas: just a team who want to build something better and work together to achieve it. We welcome anyone who is interested in joining us in our quest!</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9096</HostPort>
+        <ContainerPort>8096</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/jellyfin/</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Media/</HostDir>
+      <ContainerDir>/unionfs</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="config" Target="/config" Default="/mnt/user/appdata/jellyfin/" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/jellyfin/</Config>
+  <Config Name="Media Library" Target="/unionfs" Default="" Mode="rw" Description="Container Path: /unionfs" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Media/</Config>
+  <Config Name="Webgui" Target="8096" Default="9096" Mode="tcp" Description="Container Port: 8096" Type="Port" Display="always" Required="true" Mask="false">9096</Config>
+</Container>

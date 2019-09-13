@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>steamcache-monolithic</Name>
+  <Repository>steamcache/monolithic</Repository>
+  <Registry>https://github.com/steamcache/monolithic</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://avatars1.githubusercontent.com/u/16938914?s=200&amp;amp;v=4</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1554746808</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort>80</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/steamcache/cache/</HostDir>
+      <ContainerDir>/data/cache</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/steamcache/logs/</HostDir>
+      <ContainerDir>/data/logs</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1.1.1.1 1.0.0.1</Value>
+      <Name>UPSTREAM_DNS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>500m</Value>
+      <Name>CACHE_MEM_SIZE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>2000g</Value>
+      <Name>CACHE_DISK_SIZE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>90</Value>
+      <Name>LOGFILE_RETENTION</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Path 1" Target="/data/cache" Default="" Mode="rw" Description="Container Path: /cache/data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/steamcache/cache/</Config>
+  <Config Name="Host Path 2" Target="/data/logs" Default="" Mode="rw" Description="Container Path: /data/logs" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/steamcache/logs/</Config>
+  <Config Name="Host Key 1" Target="UPSTREAM_DNS" Default="" Mode="" Description="Container Variable: UPSTREAM_DNS" Type="Variable" Display="always" Required="false" Mask="false">1.1.1.1 1.0.0.1</Config>
+  <Config Name="Host Key 2" Target="CACHE_MEM_SIZE" Default="" Mode="" Description="Container Variable: CACHE_MEM_SIZE" Type="Variable" Display="always" Required="false" Mask="false">500m</Config>
+  <Config Name="Host Key 3" Target="CACHE_DISK_SIZE" Default="" Mode="" Description="Container Variable: CACHE_DISK_SIZE" Type="Variable" Display="always" Required="false" Mask="false">2000g</Config>
+  <Config Name="LOGFILE_RETENTION" Target="LOGFILE_RETENTION" Default="" Mode="" Description="Container Variable: LOGFILE_RETENTION" Type="Variable" Display="always" Required="false" Mask="false">90</Config>
+  <Config Name="80" Target="80" Default="" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">80</Config>
+</Container>

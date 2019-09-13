@@ -1,0 +1,51 @@
+
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Phantombot</Name>
+  <Repository>sleepiestmario/phantombot:stable</Repository>
+  <Registry>https://hub.docker.com/r/sleepiestmario/phantombot</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Deanosim/Unraid-Server-Documentation</Support>
+  <Project>https://phantombot.tv/</Project>
+  <Overview>botlogin.txt needs to be in the config folder with the required settings from the dockerhub page set.</Overview>
+  <Category>Other:</Category>
+  <WebUI>http://[IP]:[PORT:25000]</WebUI>
+  <TemplateURL>https://github.com/Deanosim/Unraid-Server-Documentation/blob/master/Docker%20Templates/Phantombot.xml</TemplateURL>
+  <Icon>https://blog.phantombot.tv/content/images/2018/03/android-chrome-512x512-2.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1555602587</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>botlogin.txt needs to be in the config folder with the required settings from the dockerhub page set.</Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/phantombot/</HostDir>
+      <ContainerDir>/phantombot/config/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/phantombot/backup/</HostDir>
+      <ContainerDir>/backup</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/etc/localtime</HostDir>
+      <ContainerDir>/etc/localtime</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="config folder" Target="/phantombot/config/" Default="/mnt/user/appdata/phantombot/" Mode="rw" Description="Container Path: /phantombot/config/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/phantombot/</Config>
+  <Config Name="Backup folder" Target="/backup" Default="/mnt/user/appdata/phantombot/backup/" Mode="rw" Description="Container Path: /backup" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/phantombot/backup/</Config>
+  <Config Name="time" Target="/etc/localtime" Default="/etc/localtime" Mode="ro" Description="Container Path: /etc/localtime" Type="Path" Display="advanced-hide" Required="true" Mask="false">/etc/localtime</Config>
+</Container>

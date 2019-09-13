@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>minecraft-server-spigot-creative</Name>
+  <Repository>itzg/minecraft-server</Repository>
+  <Registry>https://hub.docker.com/r/itzg/minecraft-server/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>This docker image provides a Minecraft Server that will automatically download the latest stable version at startup. You can also run/upgrade to any specific version or the latest snapshot. See the Versions section below for more information.&#xD;
+&#xD;
+RCON is enabled by default, so you can exec into the container to access the Minecraft server console:&#xD;
+&#xD;
+docker exec -i mc rcon-cli</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1554745047</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>This docker image provides a Minecraft Server that will automatically download the latest stable version at startup. You can also run/upgrade to any specific version or the latest snapshot. See the Versions section below for more information.&#xD;
+&#xD;
+RCON is enabled by default, so you can exec into the container to access the Minecraft server console:&#xD;
+&#xD;
+docker exec -i mc rcon-cli</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>25567</HostPort>
+        <ContainerPort>25565</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/minecraft-server-creative</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>TRUE</Value>
+      <Name>EULA</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>PineappleCraft | Creative</Value>
+      <Name>SERVER_NAME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>normal</Value>
+      <Name>DIFFICULTY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Deanosim,ExplodingPineap</Value>
+      <Name>OPS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>ICON</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>ENABLE_QUERY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>20</Value>
+      <Name>MAX_PLAYERS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>-1811596522</Value>
+      <Name>SEED</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>PAPEr</Value>
+      <Name>TYPE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1.13.2</Value>
+      <Name>VERSION</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>FALSE</Value>
+      <Name>ONLINE_MODE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>ALLOW_NETHER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>SPAWN_ANIMALS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>SPAWN_MONSTERS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>SPAWN_NPCS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>creative</Value>
+      <Name>MODE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>&amp;6Pineapple&amp;4Craft | Creative</Value>
+      <Name>MOTD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>PVP</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>flat</Value>
+      <Name>LEVEL_TYPE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>GENERATE_STRUCTURES</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>-1</Value>
+      <Name>MAX_TICK_TIME</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="data" Target="/data" Default="/mnt/user/appdata/minecraft-server" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/minecraft-server-creative</Config>
+  <Config Name="EULA" Target="EULA" Default="TRUE" Mode="" Description="Container Variable: EULA" Type="Variable" Display="always" Required="true" Mask="false">TRUE</Config>
+  <Config Name="Host Port 1" Target="25565" Default="25565" Mode="tcp" Description="Container Port: 25565" Type="Port" Display="always" Required="true" Mask="false">25567</Config>
+  <Config Name="SERVER_NAME" Target="SERVER_NAME" Default="" Mode="" Description="Container Variable: SERVER_NAME" Type="Variable" Display="always" Required="false" Mask="false">PineappleCraft | Creative</Config>
+  <Config Name="DIFFICULTY" Target="DIFFICULTY" Default="easy" Mode="" Description="Container Variable: DIFFICULTY" Type="Variable" Display="always" Required="false" Mask="false">normal</Config>
+  <Config Name="OPS" Target="OPS" Default="" Mode="" Description="Container Variable: OPS" Type="Variable" Display="always" Required="false" Mask="false">Deanosim,ExplodingPineap</Config>
+  <Config Name="ICON" Target="ICON" Default="" Mode="" Description="Container Variable: ICON" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="ENABLE_QUERY" Target="ENABLE_QUERY" Default="" Mode="" Description="Container Variable: ENABLE_QUERY" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="MAX_PLAYERS" Target="MAX_PLAYERS" Default="20" Mode="" Description="Container Variable: MAX_PLAYERS" Type="Variable" Display="always" Required="true" Mask="false">20</Config>
+  <Config Name="SEED" Target="SEED" Default="" Mode="" Description="Container Variable: SEED" Type="Variable" Display="always" Required="false" Mask="false">-1811596522</Config>
+  <Config Name="TYPE" Target="TYPE" Default="" Mode="" Description="Container Variable: TYPE" Type="Variable" Display="always" Required="false" Mask="false">PAPEr</Config>
+  <Config Name="VERSION" Target="VERSION" Default="" Mode="" Description="Container Variable: VERSION" Type="Variable" Display="always" Required="false" Mask="false">1.13.2</Config>
+  <Config Name="ONLINE_MODE" Target="ONLINE_MODE" Default="" Mode="" Description="Container Variable: ONLINE_MODE" Type="Variable" Display="always" Required="false" Mask="false">FALSE</Config>
+  <Config Name="ALLOW_NETHER" Target="ALLOW_NETHER" Default="" Mode="" Description="Container Variable: ALLOW_NETHER" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="SPAWN_ANIMALS" Target="SPAWN_ANIMALS" Default="" Mode="" Description="Container Variable: SPAWN_ANIMALS" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="SPAWN_MONSTERS" Target="SPAWN_MONSTERS" Default="" Mode="" Description="Container Variable: SPAWN_MONSTERS" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="SPAWN_NPCS" Target="SPAWN_NPCS" Default="" Mode="" Description="Container Variable: SPAWN_NPCS" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="MODE" Target="MODE" Default="" Mode="" Description="Container Variable: MODE" Type="Variable" Display="always" Required="false" Mask="false">creative</Config>
+  <Config Name="MOTD" Target="MOTD" Default="" Mode="" Description="Container Variable: MOTD" Type="Variable" Display="always" Required="false" Mask="false">&amp;6Pineapple&amp;4Craft | Creative</Config>
+  <Config Name="PVP" Target="PVP" Default="" Mode="" Description="Container Variable: PVP" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="LEVEL_TYPE" Target="LEVEL_TYPE" Default="" Mode="" Description="Container Variable: LEVEL_TYPE" Type="Variable" Display="always" Required="false" Mask="false">flat</Config>
+  <Config Name="GENERATE_STRUCTURES" Target="GENERATE_STRUCTURES" Default="" Mode="" Description="Container Variable: GENERATE_STRUCTURES" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="MAX_TICK_TIME" Target="MAX_TICK_TIME" Default="" Mode="" Description="Container Variable: MAX_TICK_TIME" Type="Variable" Display="always" Required="false" Mask="false">-1</Config>
+</Container>

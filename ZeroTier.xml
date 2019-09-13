@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ZeroTier</Name>
+  <Repository>spikhalskiy/zerotier</Repository>
+  <Registry>https://registry.hub.docker.com/u/spikhalskiy/zerotier/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support>https://lime-technology.com/forums/topic/72030-support-spikhalskiy-zerotier/</Support>
+  <Project/>
+  <Overview>&#xD;
+  	Zerotier is an open source, cross-platform&#xA0;virtual LAN / VPN. [br]&#xD;
+    It allows remote access to devices&#xA0;as if they all reside in the same local network. [br]&#xD;
+    All traffic is encrypted end-to-end and takes the most direct path available for minimum latency and maximum performance, using&#xA0;VPN-like connections. [br]&#xD;
+    After setting up Zerotier on unRaid and any other devices - a VPN connection will be set up and all connected devices will be available like they are in the same network. [br]&#xD;
+    SMB shares, TimeMachine will be autodetected and UIs will be available on regular hostnames and ports.&#xD;
+  </Overview>
+  <Category>Network:DNS Network:Management Network:Other</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Spikhalskiy/docker-templates/master/images/zerotier_ico.png</Icon>
+  <ExtraParams>--device=/dev/net/tun --cap-add=NET_ADMIN --cap-add=SYS_ADMIN</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1554747115</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#xD;
+  	Zerotier is an open source, cross-platform&#xA0;virtual LAN / VPN. [br]&#xD;
+    It allows remote access to devices&#xA0;as if they all reside in the same local network. [br]&#xD;
+    All traffic is encrypted end-to-end and takes the most direct path available for minimum latency and maximum performance, using&#xA0;VPN-like connections. [br]&#xD;
+    After setting up Zerotier on unRaid and any other devices - a VPN connection will be set up and all connected devices will be available like they are in the same network. [br]&#xD;
+    SMB shares, TimeMachine will be autodetected and UIs will be available on regular hostnames and ports.&#xD;
+  </Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/zerotier/zerotier-one</HostDir>
+      <ContainerDir>/var/lib/zerotier-one</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>a84ac5c10a9f83b4</Value>
+      <Name>NETWORK_ID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Network ID" Target="NETWORK_ID" Default="" Mode="" Description="Network ID of ZeroTier network to join, could be find on page: https://my.zerotier.com/network" Type="Variable" Display="always-hide" Required="true" Mask="false">a84ac5c10a9f83b4</Config>
+  <Config Name="Config Directory" Target="/var/lib/zerotier-one" Default="/mnt/user/appdata/zerotier/zerotier-one" Mode="rw" Description="Path to persist ZeroTier state across restarts of the container. If you don't bind this ZeroTier will generate a new identity every time." Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/zerotier/zerotier-one</Config>
+</Container>

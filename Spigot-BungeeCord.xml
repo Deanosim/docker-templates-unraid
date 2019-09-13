@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>bungeecord</Name>
+  <Repository>itzg/bungeecord</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams>--memory=0.5G</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1554743980</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>25565</HostPort>
+        <ContainerPort>25577</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/bungeecord/server</HostDir>
+      <ContainerDir>/server</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/bungeecord/plugins</HostDir>
+      <ContainerDir>/plugins</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="server" Target="/server" Default="" Mode="rw" Description="Container Path: /server" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/bungeecord/server</Config>
+  <Config Name="plugins" Target="/plugins" Default="" Mode="rw" Description="Container Path: /plugins" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/bungeecord/plugins</Config>
+  <Config Name="port" Target="25577" Default="" Mode="tcp" Description="Container Port: 25577" Type="Port" Display="always" Required="false" Mask="false">25565</Config>
+</Container>

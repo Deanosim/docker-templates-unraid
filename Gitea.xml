@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Gitea</Name>
+  <Repository>gitea/gitea</Repository>
+  <Registry>https://registry.hub.docker.com/u/gitea/gitea/</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.206</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.lime-technology.com/topic/60168-support-gitea/</Support>
+  <Project/>
+  <Overview>Gitea: Git with a cup of tea - The goal of this project is to make the easiest, fastest, and most painless way of setting up a self-hosted Git service. Using Go, this can be done with an independent binary distribution across all platforms which Go supports, including Linux, macOS, and Windows on x86, amd64, ARM and PowerPC architectures. Want to try it before doing anything else? Do it with the online demo! This project has been forked from Gogs.</Overview>
+  <Category>Backup: Cloud: Productivity: Tools: </Category>
+  <WebUI>http://[IP]:[PORT:3000]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/fanningert/unraid-docker-templates/master/fanningert/icons/gitea.png</Icon>
+  <ExtraParams>--memory=0.1G</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1554744664</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Gitea: Git with a cup of tea - The goal of this project is to make the easiest, fastest, and most painless way of setting up a self-hosted Git service. Using Go, this can be done with an independent binary distribution across all platforms which Go supports, including Linux, macOS, and Windows on x86, amd64, ARM and PowerPC architectures. Want to try it before doing anything else? Do it with the online demo! This project has been forked from Gogs.</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>2222</HostPort>
+        <ContainerPort>22</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>3000</HostPort>
+        <ContainerPort>3000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/gitea</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="Git over SSH" Target="22" Default="22" Mode="tcp" Description="Container Port: 22" Type="Port" Display="always" Required="true" Mask="false">2222</Config>
+  <Config Name="WebUI and Git over HTTP" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+  <Config Name="Data Storage Path" Target="/data" Default="/mnt/user/appdata/gitea" Mode="rw" Description="Container Path: /data" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/gitea</Config>
+</Container>

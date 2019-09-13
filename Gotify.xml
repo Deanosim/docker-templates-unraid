@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>server</Name>
+  <Repository>gotify/server</Repository>
+  <Registry>https://hub.docker.com/r/gotify/server//Dockerfile/</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.214</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/gotify/server/</Support>
+  <Project/>
+  <Overview>a simple server for sending and receiving messages   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <TemplateURL/>
+  <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1554746362</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>a simple server for sending and receiving messages   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>80</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/gotify</HostDir>
+      <ContainerDir>/app/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="port" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">80</Config>
+  <Config Name="Host Path 1" Target="/app/data" Default="/mnt/user/appdata/gotify" Mode="rw" Description="Container Path: /app/data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/gotify</Config>
+</Container>

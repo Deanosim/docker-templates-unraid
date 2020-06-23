@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>OpenStreamingPlatform</Name>
+  <Repository>deamos/openstreamingplatform</Repository>
+  <Registry>https://hub.docker.com/r/deamos/openstreamingplatform</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.236</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://openstreamingplatform.com/</Project>
+  <Overview>Open Streaming Platform (OSP) is an open-source, RTMP streamer software front-end for Arut's NGINX RTMP Module. OSP was designed a self-hosted alternative to services like Twitch.tv, Ustream.tv, and Youtube Live. OSP is still considered Beta and is not complete</Overview>
+  <Category>MediaServer:Video Network:Web Status:Beta</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://assets.gitlab-static.net/uploads/-/system/project/avatar/5871108/OSP-logo-black.png?width=64</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1592933063</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Open Streaming Platform (OSP) is an open-source, RTMP streamer software front-end for Arut's NGINX RTMP Module. OSP was designed a self-hosted alternative to services like Twitch.tv, Ustream.tv, and Youtube Live. OSP is still considered Beta and is not complete</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/Media/OPS/</HostDir>
+      <ContainerDir>/var/www</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/OSP/db/</HostDir>
+      <ContainerDir>/opt/osp/db/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/OSP/nginx/</HostDir>
+      <ContainerDir>/usr/local/nginx/conf</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>192.168.1.200</Value>
+      <Name>REDIS_HOST</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>REDIS_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>REDIS_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>DB_URL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Gra0019!</Value>
+      <Name>FLASK_SECRET</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Gra0019!</Value>
+      <Name>FLASK_SALT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>OSP_ALLOWREGISTRATION</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>OSP_REQUIREVERIFICATION</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="REDIS_HOST" Target="REDIS_HOST" Default="" Mode="" Description="REDIS_HOST: Sets the Redis Instance IP/Hostname (REQUIRED)" Type="Variable" Display="always" Required="true" Mask="false">192.168.1.200</Config>
+  <Config Name="REDIS_PORT" Target="REDIS_PORT" Default="" Mode="" Description="REDIS_PORT: Sets the Redis Instance Port" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="REDIS_PASSWORD" Target="REDIS_PASSWORD" Default="" Mode="" Description="REDIS_PASSWORD: Sets the Redis Instance Password, if needed" Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="DB_URL" Target="DB_URL" Default="" Mode="" Description="DB_URL: Sets the SQLAlchemy URL String for the used DB.&#13;&#10;Default: " Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="FLASK_SECRET" Target="FLASK_SECRET" Default="" Mode="" Description="FLASK_SECRET: Flask Secret Key | Format: " Type="Variable" Display="always" Required="true" Mask="true">Gra0019!</Config>
+  <Config Name="FLASK_SALT" Target="FLASK_SALT" Default="" Mode="" Description="FLASK_SALT: Flask User Salt Value" Type="Variable" Display="always" Required="true" Mask="true">Gra0019!</Config>
+  <Config Name="OSP_ALLOWREGISTRATION" Target="OSP_ALLOWREGISTRATION" Default="" Mode="" Description="OSP_ALLOWREGISTRATION: Sets OSP to allow users to create accounts&#13;&#10;&#13;&#10;Default: True&#13;&#10;" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="OSP_REQUIREVERIFICATION" Target="OSP_REQUIREVERIFICATION" Default="" Mode="" Description="OSP_REQUIREVERIFICATION: Sets New OSP user accounts to verify their email addresses&#13;&#10;&#13;&#10;Default: True" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Storage" Target="/var/www" Default="/mnt/user/Media/OPS/" Mode="rw" Description="/var/www - Storage of Images, Streams, and Stored Video Files" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Media/OPS/</Config>
+  <Config Name="SQLite DB Location (if used)" Target="/opt/osp/db/" Default="/mnt/user/appdata/OSP/db/" Mode="rw" Description="/opt/osp/db/ - SQLite DB Location (if used) - SQLite DB Location (if used)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/OSP/db/</Config>
+  <Config Name="NginX Configuration files" Target="/usr/local/nginx/conf" Default="/mnt/user/appdata/OSP/nginx/" Mode="rw" Description="/usr/local/nginx/conf - Contains the NginX Configuration files which can be altered to suit your needs (HTTPS without something like Traefik)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/OSP/nginx/</Config>
+</Container>

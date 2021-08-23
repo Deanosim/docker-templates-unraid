@@ -16,10 +16,10 @@
   <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/sabnzbd-icon.png</Icon>
   <ExtraParams>--memory=1G</ExtraParams>
   <PostArgs/>
-  <CPUset/>
-  <DateInstalled>1554746283</DateInstalled>
-  <DonateText>Donations</DonateText>
-  <DonateLink>https://www.linuxserver.io/donate</DonateLink>
+  <CPUset>0,2</CPUset>
+  <DateInstalled></DateInstalled>
+  <DonateText/>
+  <DonateLink/>
   <Description>SABnzbd makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction.</Description>
   <Networking>
     <Mode>br0</Mode>
@@ -30,7 +30,7 @@
         <Protocol>tcp</Protocol>
       </Port>
       <Port>
-        <HostPort>9090</HostPort>
+        <HostPort>8084</HostPort>
         <ContainerPort>9090</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
@@ -67,7 +67,7 @@
   </Environment>
   <Labels/>
   <Config Name="Host Port 1" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
-  <Config Name="Host Port 2" Target="9090" Default="9090" Mode="tcp" Description="Container Port: 9090" Type="Port" Display="always" Required="true" Mask="false">9090</Config>
+  <Config Name="Host Port 2" Target="9090" Default="8084" Mode="tcp" Description="Container Port: 8084" Type="Port" Display="always" Required="true" Mask="false">8084</Config>
   <Config Name="Host Path 2" Target="/downloads" Default="" Mode="rw" Description="Container Path: /downloads" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Downloads/Media/Complete/</Config>
   <Config Name="Host Path 3" Target="/incomplete-downloads" Default="" Mode="rw" Description="Container Path: /incomplete-downloads" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Downloads/Media/Incomplete/</Config>
   <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>

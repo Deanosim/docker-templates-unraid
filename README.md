@@ -16,6 +16,7 @@
 - LanCache-SNIProxy.xml
 - zntcui.xml
 - Phantombot.xml
+- Statping-ng.xml
 
 ### Templates Modified by Me
 - (I don't use this anymore) NginxProxyManager.xml	(replaced the unraid app store verions docker repo url to the offical docker repo)

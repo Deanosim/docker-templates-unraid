@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Maintainer>
+  <Icon>https://avatars.githubusercontent.com/u/4834976</Icon>
+  <Profile>
+    Creating Docker templates for Unraid, Portainer, and Yacht. Along with a couple of docker images, and some other random coding projects.
+  </Profile>
+  <DonateLink>https://liberapay.com/Deanosim</DonateLink>
+  <DonateText>Thanks *hugs*</DonateText>
+</Maintainer>

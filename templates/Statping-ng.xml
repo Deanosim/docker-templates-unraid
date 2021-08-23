@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>statping-ng</Name>
+  <Repository>adamboutcher/statping-ng</Repository>
+  <Registry>https://hub.docker.com/r/adamboutcher/statping-ng</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.219</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/statping-ng/statping-ng/issues</Support>
+  <Project>https://github.com/statping-ng/statping-ng</Project>
+  <Overview>An easy to use Status Page for your websites and applications. Statping-ng will automatically fetch the application and render a beautiful status page with tons of features for you to build an even better status page.</Overview>
+  <Category>Network:Web Network:Management</Category>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <TemplateURL>https://github.com/Deanosim/docker-templates-unraid/raw/master/templates/Statping-ng.xml</TemplateURL>
+  <Icon></Icon>
+  <ExtraParams>--user 99:100 --memory=0.2G --restart=always</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled></DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>An easy to use Status Page for your websites and applications. Statping will automatically fetch the application and render a beautiful status page with tons of features for you to build an even better status page.</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8366</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/statping-ng</HostDir>
+      <ContainerDir>/app</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="Config" Target="/app" Default="/mnt/user/appdata/statping-ng" Mode="rw" Description="Container Path: /app" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/statping-ng</Config>
+  <Config Name="Web" Target="8080" Default="8366" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8366</Config>
+</Container>

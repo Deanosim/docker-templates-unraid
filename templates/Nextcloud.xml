@@ -1,69 +1,83 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>nextcloud</Name>
-  <Repository>nextcloud</Repository>
-  <Registry>https://hub.docker.com/_/nextcloud/</Registry>
+  <Name>nextcloud-lsio</Name>
+  <Repository>linuxserver/nextcloud</Repository>
+  <Registry>https://hub.docker.com/r/linuxserver/nextcloud</Registry>
   <Network>br0</Network>
-  <MyIP>192.168.1.223</MyIP>
+  <MyIP>192.168.1.205</MyIP>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://hub.docker.com/_/nextcloud/</Support>
-  <Project/>
-  <Overview>A safe home for all your data   Converted By Community Applications.  Always verify this template (and values) against the dockerhub support page for the container</Overview>
-  <Category/>
-  <WebUI>http://[IP]:[PORT:80]</WebUI>
-  <TemplateURL/>
-  <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
-  <ExtraParams/>
+  <Support></Support>
+  <Project>https://nextcloud.com</Project>
+  <Overview>Nextcloud is an open source, self-hosted file sync and communication app platform. Access and sync your files, contacts, calendars and communicate and collaborate across your devices. You decide what happens with your data, where it is and who can access it!</Overview>
+  <Category>Cloud: Productivity: Tools: MediaServer:Other Network:Web Status:Stable</Category>
+  <WebUI>https://[IP]:[PORT:443]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/nextcloud.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nextcloud-icon.png</Icon>
+  <ExtraParams>--memory=1G --restart=always</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1554745232</DateInstalled>
+  <DateInstalled></DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Description>A safe home for all your data   Converted By Community Applications.  Always verify this template (and values) against the dockerhub support page for the container</Description>
+  <Description>Nextcloud is an open source, self-hosted file sync and communication app platform. Access and sync your files, contacts, calendars and communicate and collaborate across your devices. You decide what happens with your data, where it is and who can access it!</Description>
   <Networking>
     <Mode>br0</Mode>
-    <Publish/>
+    <Publish>
+      <Port>
+        <HostPort>443</HostPort>
+        <ContainerPort>443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/_nextcloud</HostDir>
-      <ContainerDir>/var/www/html</ContainerDir>
+      <HostDir>/mnt/user/Nextcloud/</HostDir>
+      <ContainerDir>/data</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/_nextcloud/mysql</HostDir>
-      <ContainerDir>/var/lib/mysql</ContainerDir>
+      <HostDir>/mnt/user/Media/audio/</HostDir>
+      <ContainerDir>/media/music</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/Media/</HostDir>
-      <ContainerDir>/mnt/Media</ContainerDir>
-      <Mode>ro</Mode>
+      <HostDir>/mnt/user/SwiftBackup/</HostDir>
+      <ContainerDir>/media/SwiftBackup</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/nextcloud-lsio</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
     </Volume>
   </Data>
   <Environment>
     <Variable>
-      <Value>nextcloud</Value>
-      <Name>MYSQL_DATABASE</Name>
+      <Value>99</Value>
+      <Name>PUID</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>nextcloud</Value>
-      <Name>MYSQL_USER</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>192.168.1.200</Value>
-      <Name>MYSQL_HOST</Name>
+      <Value>100</Value>
+      <Name>PGID</Name>
       <Mode/>
     </Variable>
   </Environment>
-  <Labels/>
-  <Config Name="/var/www/html" Target="/var/www/html" Default="" Mode="rw" Description="Container Path: /var/www/html" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/_nextcloud</Config>
-  <Config Name="/var/lib/mysql" Target="/var/lib/mysql" Default="" Mode="rw" Description="Container Path: /var/lib/mysql" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/_nextcloud/mysql</Config>
-  <Config Name="MYSQL_DATABASE" Target="MYSQL_DATABASE" Default="" Mode="" Description="Container Variable: MYSQL_DATABASE" Type="Variable" Display="always" Required="false" Mask="false">nextcloud</Config>
-  <Config Name="MYSQL_USER" Target="MYSQL_USER" Default="" Mode="" Description="Container Variable: MYSQL_USER" Type="Variable" Display="always" Required="false" Mask="false">nextcloud</Config>
-  <Config Name="MYSQL_HOST" Target="MYSQL_HOST" Default="" Mode="" Description="Container Variable: MYSQL_HOST" Type="Variable" Display="always" Required="false" Mask="false">192.168.1.200</Config>
-  <Config Name="Media" Target="/mnt/Media" Default="" Mode="ro" Description="Container Path: /mnt/Media" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Media/</Config>
+  <Labels>
+    <Label>
+      <Value>true</Value>
+      <Name>diun.enable</Name>
+      <Mode/>
+    </Label>
+  </Labels>
+  <Config Name="Host Port 1" Target="443" Default="443" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always" Required="true" Mask="false">443</Config>
+  <Config Name="Host Path 2" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Nextcloud/</Config>
+  <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="Key 2" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="Host Path 2" Target="/media/music" Default="" Mode="rw" Description="Container Path: /media/music" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Media/audio/</Config>
+  <Config Name="diun.enable" Target="diun.enable" Default="true" Mode="" Description="Container Label: diun.enable" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="Host Path 3" Target="/media/SwiftBackup" Default="" Mode="rw" Description="Container Path: /media/SwiftBackup" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/SwiftBackup/</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/nextcloud" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/nextcloud-lsio</Config>
 </Container>

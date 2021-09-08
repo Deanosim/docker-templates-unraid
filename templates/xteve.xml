@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>xteve</Name>
+  <Repository>deanosim/xteve</Repository>
+  <Registry>https://hub.docker.com/r/alturismo/xteve</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.235</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/81786-support-alturismo-repos/</Support>
+  <Project>https://github.com/alturismo/xteve</Project>
+  <Overview>xteve, in docker with cronjobs&#xD;
+&#xD;
+docker runs in host mode &#xD;
+access xteve webui ip:34400/web/&#xD;
+&#xD;
+after docker start check your config folder and do your setups, setup is persistent, start from scratch by delete them&#xD;
+&#xD;
+cron and xteve start options are updated on docker restart.</Overview>
+  <Category>MediaApp:Other Network:Proxy Status:Beta</Category>
+  <WebUI>http://[IP]:[PORT:34400]/web/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/alturismo/unraid_templates/master/my-xteve.xml</TemplateURL>
+  <Icon>https://avatars0.githubusercontent.com/u/53275662?s=460&amp;amp;v=4</Icon>
+  <ExtraParams>--runtime=nvidia --memory=1G --restart=always</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1631119314</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>xteve, in docker with cronjobs&#xD;
+&#xD;
+docker runs in host mode &#xD;
+access xteve webui ip:34400/web/&#xD;
+&#xD;
+after docker start check your config folder and do your setups, setup is persistent, start from scratch by delete them&#xD;
+&#xD;
+cron and xteve start options are updated on docker restart.</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/xteve/</HostDir>
+      <ContainerDir>/root/.xteve</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/xteve</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/cache/xteve-cache/</HostDir>
+      <ContainerDir>/tmp/xteve</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir/>
+      <ContainerDir>/TVH</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>all</Value>
+      <Name>NVIDIA_DRIVER_CAPABILITIES</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>all</Value>
+      <Name>NVIDIA_VISIBLE_DEVICES</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="/xteve" Target="/root/.xteve" Default="" Mode="rw" Description="Container Path: /root/.xteve" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/xteve/</Config>
+  <Config Name="/config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/xteve</Config>
+  <Config Name="/tmp" Target="/tmp/xteve" Default="" Mode="rw" Description="/tmp/xteve&#13;&#10;in case u want to move /tmp to RAM on host&#13;&#10;buffer, ..." Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/xteve-cache/</Config>
+  <Config Name="/TVH" Target="/TVH" Default="" Mode="rw" Description="/mnt/user/appdata/tvheadend/data/&#13;&#10;in case TVHeadend functions are used to move" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="NVIDIA_DRIVER_CAPABILITIES" Target="NVIDIA_DRIVER_CAPABILITIES" Default="" Mode="" Description="NVIDIA_DRIVER_CAPABILITIES" Type="Variable" Display="always" Required="false" Mask="false">all</Config>
+  <Config Name="NVIDIA_VISIBLE_DEVICES" Target="NVIDIA_VISIBLE_DEVICES" Default="" Mode="" Description="NVIDIA_VISIBLE_DEVICES" Type="Variable" Display="always" Required="false" Mask="false">all</Config>
+</Container>

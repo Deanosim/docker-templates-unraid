@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>steam-prefill</Name>
+  <Repository>ghcr.io/mintopia/steam-prefill-docker:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/mintopia/steam-prefill-docker</Support>
+  <Project>https://github.com/tpill90/steam-lancache-prefill</Project>
+  <Overview>Dockerfile, docker-compose and helper scripts for running tpill90's steam-lancache-prefill within a docker container.</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams>-it</ExtraParams>
+  <PostArgs>select-apps</PostArgs>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="/app/Cache" Target="/app/Cache" Default="/mnt/user/appdata/steam-prefill/Cache" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/steam-prefill/Cache</Config>
+  <Config Name="/app/Config" Target="/app/Config" Default="/mnt/user/appdata/steam-prefill/Config" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/steam-prefill/Config</Config>
+</Container>

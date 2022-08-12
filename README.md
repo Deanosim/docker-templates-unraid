@@ -18,6 +18,7 @@
 - Phantombot.xml
 - Statping-ng.xml
 - [Steam-Prefill.xml](https://github.com/Deanosim/docker-templates-unraid/blob/master/templates/Steam-Prefill.xml) (Currently untested, but from what I can tell it should work)
+- [Floatplane-Downloader](https://github.com/Deanosim/docker-templates-unraid/blob/master/templates/Floatplane-Downloader.xml)
 
 ### Templates Modified by Me
 - (I don't use this anymore) NginxProxyManager.xml	(replaced the unraid app store verions docker repo url to the offical docker repo)

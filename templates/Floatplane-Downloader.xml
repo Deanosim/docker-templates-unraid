@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Floatplane-Downloader</Name>
+  <Repository>inrix/floatplane-downloader:latest</Repository>
+  <Registry>https://hub.docker.com/r/inrix/floatplane-downloader</Registry>
+  <Network>bridge</Network>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Deanosim/docker-templates-unraid/issues</Support>
+  <Project>https://github.com/Inrixia/Floatplane-Downloader</Project>
+  <Overview>Floatplane Downloader Automagically downloads the latest videos from Floatplane and optionally formats them to be viewed in Plex.&#xD;
+&#xD;
+Both downloading videos as they release and archiving the entire backlog is supported!&#xD;
+This requires a Floatplane subscription.</Overview>
+  <Category>Downloaders: MediaApp:Video Status:Stable</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://user-images.githubusercontent.com/6373693/115112327-2b69b680-9fd9-11eb-8239-45b30219f705.png</Icon>
+  <ExtraParams>--restart=always --hostname="Floatplane-Downloader"</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Downloads" Target="/fp/videos" Default="/mnt/user/video/web/Floatplane/" Mode="rw" Description="Location to store downloaded videos" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/video/web/Floatplane/</Config>
+  <Config Name="floatplane video resolution" Target="floatplane_videoResolution" Default="1080" Mode="" Description="Video Resolution" Type="Variable" Display="always" Required="false" Mask="false">1080</Config>
+  <Config Name="Floatplane Username" Target="username" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Floatplane Password" Target="password" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="true"></Config>
+  <Config Name="Floatplane Token" Target="token" Default="" Mode="" Description="Floatplane 2FA Token (Optional)" Type="Variable" Display="always" Required="false" Mask="true"></Config>
+  <Config Name="headless" Target="headless" Default="true" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">true</Config>
+  <Config Name="Database" Target="/fp/db" Default="/mnt/user/appdata/floatplane-downloader/db" Mode="rw" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/cache/appdata/floatplane-downloader/db</Config>
+</Container>

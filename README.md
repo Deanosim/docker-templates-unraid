@@ -3,7 +3,6 @@
 
 ### Templates Created by Me
 - Jellyfin.xml (I made this because the Offical one is missing from the jellyfin github)
-- Minecraft-Server-PaperSpigot.xml
 - Spigot-BungeeCord.xml
 - Antennas.xml
 - Mellow-Discord.xml
